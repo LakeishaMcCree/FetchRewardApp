@@ -7,15 +7,15 @@ import com.example.fetchrewardsapp.databinding.FetchItemBinding
 import com.example.fetchrewardsapp.model.FetchListItem
 
 class FetchAdapter(
-     private val itemClicked:(FetchListItem) -> Unit
-    ): RecyclerView.Adapter<FetchAdapter.FetchViewHolder>() {
-
+    private val itemClicked:(FetchListItem) -> Unit
+): RecyclerView.Adapter<FetchAdapter.FetchViewHolder>() {
     private var itemList: List<FetchListItem> = emptyList()
 
     fun bindData(items: List<FetchListItem>) {
         itemList = items
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FetchViewHolder {
         val binding = FetchItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FetchViewHolder(binding)
@@ -29,8 +29,11 @@ class FetchAdapter(
         return itemList.size
     }
 
-    inner class FetchViewHolder (val binding: FetchItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: FetchListItem){
+
+    inner class FetchViewHolder(
+        val binding: FetchItemBinding
+    ): RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: FetchListItem) {
             binding.listId.text = "List Id: ${item.listId}"
             binding.name.text = "Name: ${item.name}"
 
@@ -38,11 +41,7 @@ class FetchAdapter(
                 itemClicked(item)
             }
         }
+
+
     }
-
-
-
-
-
-
 }

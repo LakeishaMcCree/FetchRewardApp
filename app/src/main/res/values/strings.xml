@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">FetchRewardsApp</string>
+    <string name="app_name">Fetch Rewards App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fetch">Fetch</string>
-    <string name="list_id">List Id:</string>
-    <string name="name">Name:</string>
+    <string name="list_id">List Id</string>
+
+    <string name="item_name">Name</string>
+    <string name="name">Name</string>
 </resources>

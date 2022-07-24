@@ -7,9 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.fetchrewardsapp.model.FetchListItem
 import com.example.fetchrewardsapp.repository.FetchRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.handleCoroutineException
 import kotlinx.coroutines.launch
 
-class FetchViewModel(): ViewModel() {
+class FetchViewModel: ViewModel() {
     private val repository: FetchRepository = FetchRepository()
 
     private val _fetchListItem = MutableLiveData<List<FetchListItem>>()
